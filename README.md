@@ -2,7 +2,7 @@
 
 A collection of three C programs designed to encrypt, manipulate, and process text using historical cryptographic methods. This project demonstrates string manipulation, ASCII math, and command-line argument handling in C.
 
-## 🛠 Included Tools
+## Included Tools
 
 ### 1. Caesar Cipher
 A substitution cipher that shifts every letter in a plaintext by a fixed number of positions (the key) down the alphabet.
@@ -16,9 +16,20 @@ A more advanced polyalphabetic substitution cipher that uses a keyword to apply 
 A utility that extracts the first letter of every word in a string and capitalizes them to create an acronym or initialism.
 * **Usage:** Run the program and provide a string when prompted.
 
+Concepts Applied
+Modular Arithmetic: Using (x + k) % 26 to handle alphabet wrapping.
+
+ASCII Mapping: Manually shifting characters based on standard integer values (65 for 'A', 97 for 'a').
+
+Command Line Arguments: Validating argc and parsing argv.
+
+Index Tracking: Maintaining separate counters for plaintext and keyword indices in the Vigenère cipher.
+
+License
+This project is open-source and available under the MIT License.
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 These programs were built using the **CS50 library**. To compile them, you need the `cs50.h` header file and the linker flag `-lcs50`.
