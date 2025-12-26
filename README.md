@@ -31,9 +31,6 @@ This project is open-source and available under the MIT License.
 
 ## Getting Started
 
-### Prerequisites
-These programs were built using the **CS50 library**. To compile them, you need the `cs50.h` header file and the linker flag `-lcs50`.
-
 ### Compilation
 Use `clang` or `make` to compile the source files:
 
