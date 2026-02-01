@@ -4,6 +4,16 @@
 A collection of classic cryptographic algorithms implemented in **C** (for historical context) and **Julia** (modern, high-performance implementation).
 
 ## Repository Structure
+```mermaid
+graph TD;
+    Root-->Src;
+    Root-->Visualization;
+    Root-->Test;
+    Src-->C_Lang["C (Legacy)"];
+    Src-->Julia_Lang["Julia (Modern)"];
+    Visualization-->Viz_Script["viz_generator.jl"];
+    Test-->UnitTests["runtests.jl"];
+```
 
 ```
 .
@@ -41,6 +51,18 @@ julia src/julia/caesar_break.jl
 ---
 
 ## Mathematical Foundations
+
+### Logic Flow
+
+```mermaid
+flowchart LR
+    Input[Plaintext] --> Filter{Is Letter?}
+    Filter -- No --> Output[Result]
+    Filter -- Yes --> Normalize[0-25 Index]
+    Normalize --> Shift[Add Key Mod 26]
+    Shift --> ASCII[To Char]
+    ASCII --> Output
+```
 
 ### Modular Arithmetic
 The core of these ciphers is modular arithmetic within the integer ring $\mathbb{Z}_{26}$. We map letters $A \dots Z$ to $0 \dots 25$.
