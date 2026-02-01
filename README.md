@@ -80,5 +80,22 @@ If you have the CS50 library installed:
 
 ```bash
 make caesar
-./caesar 5
+./src/c/caesar 5
+```
+
+## Visualization uses Chart.js
+
+We provide a tool to generate detailed HTML/JS frequency charts.
+
+```bash
+julia visualization/viz_generator.jl
+# Paste text, then open 'visualization/frequency_chart.html' in your browser.
+```
+
+## Testing
+
+To run the unit tests for the Julia implementation:
+
+```bash
+julia test/runtests.jl
 ```
