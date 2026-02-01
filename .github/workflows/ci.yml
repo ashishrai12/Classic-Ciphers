@@ -1,0 +1,29 @@
+
+name: CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-julia:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Julia
+      uses: julia-actions/setup-julia@v1
+      with:
+        version: '1.9'
+        
+    - name: Verify Julia Scripts Load
+      run: |
+        # Just check if files compile/load without syntax error
+        julia src/julia/ClassicCiphers.jl
+        julia --check-bounds=yes src/julia/caesar.jl 1 <<< "hello"
+        julia src/julia/vigenere.jl KEY <<< "hello"
+
+  # We skip C build because CS50 library might not be present in standard runner
+  # unless we install it, but for now let's focus on the new Julia code.
